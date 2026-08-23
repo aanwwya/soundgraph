@@ -132,6 +132,15 @@
   color: var(--muted);
 }
 
+.listen-arrow {
+  display: inline-block;
+  width: 0.72em;
+  height: 0.72em;
+  margin-left: 0.28em;
+  vertical-align: -0.02em;
+  overflow: visible;
+}
+
 @keyframes note-in {
   from {
     opacity: 0;

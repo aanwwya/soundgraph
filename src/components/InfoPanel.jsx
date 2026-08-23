@@ -64,6 +64,26 @@ function Description({ paragraphs }) {
   ));
 }
 
+function ExternalArrow() {
+  return (
+    <svg
+      className="listen-arrow"
+      viewBox="0 0 12 12"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M3 9L9 3M5 3h4v4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function InfoPanel({ record, onSelect, onClose }) {
   if (!record) {
     return null;
@@ -77,10 +97,10 @@ export default function InfoPanel({ record, onSelect, onClose }) {
   const meta = typeLine(record);
   const listenHref = record.artistUrl || record.playlistUrl;
   const listenLabel = record.artistUrl
-    ? "artist ↗"
+    ? "artist"
     : isGenre
-      ? `${record.name} playlist ↗`
-      : "open playlist ↗";
+      ? `${record.name} playlist`
+      : "open playlist";
 
   return (
     <aside className="info-panel" aria-label={`${record.name} note`}>
@@ -131,6 +151,7 @@ export default function InfoPanel({ record, onSelect, onClose }) {
             <span aria-hidden="true">♫</span>
             <a href={listenHref} target="_blank" rel="noreferrer">
               {listenLabel}
+              <ExternalArrow />
             </a>
           </p>
         </section>
