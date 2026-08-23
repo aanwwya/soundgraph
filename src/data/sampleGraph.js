@@ -268,7 +268,7 @@ export const records = [
       "what makes alice coltrane especially interesting is how she treated sound almost like texture. the harp isn't just there to provide chords, the tanpura isn't just decoration and the percussion isn't simply keeping time. everything adds another layer. her records reward headphones because there are little sounds sitting underneath the main melody that you might completely miss the first time.",
     ],
     artistUrl:
-      "https://open.spotify.com/artist/0oKYiTD5CdNbrofRvM1dIr?si=kGZH04GbQSiRqrGwUpIaCg",
+      "https://open.spotify.com/artist/0oKYiTD5CdNbrofRvM1dIr?si=JIgSAOVoRUW2x-Qs5ecBdA",
   },
   {
     id: "buddy-bolden",
@@ -884,13 +884,14 @@ export const records = [
     name: "sonic youth",
     type: "artist",
     genres: ["alternative"],
-    activeYears: "1981–2011",
-    description:
-      "new york, 1981. alternate tunings, feedback, and a long path from the downtown scene to major labels without sanding off the edges.",
-    history: [
-      { year: "1981", event: "formed" },
-      { year: "1988", event: "daydream nation" },
+    description: [
+      "sonic youth are one of those bands where the guitars almost feel like their own instruments rather than just something playing chords. they came out of new york in the early 1980s and built their sound around alternate tunings, feedback, prepared guitars and weird little noises that most rock bands would probably try to avoid.",
+      "daydream nation from 1988 is a good place to start. the guitars on that record can sound huge and messy, but there is a lot of structure underneath it. songs like teen age riot and silver rocket show how they could take noise and turn it into something surprisingly catchy.",
+      "the really nerdy part is how they treated their guitars. thurston moore and lee ranaldo often used different tunings and unusual techniques, including placing objects like screwdrivers or drumsticks on the strings to create strange sounds. they weren't just trying to make the guitar sound louder. they were finding completely new sounds inside the instrument.",
+      "goo brought them to a much wider audience, while dirty had a heavier and more direct sound. but daydream nation still feels like the record where everything clicks. it has this strange balance between controlled songwriting and complete sonic chaos, which is probably the best description of sonic youth in general.",
     ],
+    artistUrl:
+      "https://open.spotify.com/artist/5UqTO8smerMvxHYA5xsXb6?si=SKYfbOTdSVyDJyPxFgEzeg",
   },
   {
     id: "pixies",
@@ -911,88 +912,85 @@ export const records = [
     name: "pavement",
     type: "artist",
     genres: ["alternative"],
-    activeYears: "1989–1999, 2010–",
-    description:
-      "stockton, california. slanted and enchanted made slack, crooked indie rock sound like the center of something, even when it refused to stand up straight.",
-    history: [
-      { year: "1989", event: "formed" },
-      { year: "1992", event: "slanted and enchanted" },
+    description: [
+      "pavement came out of california in the late 1980s and had a pretty strange relationship with being a rock band. their songs could be genuinely catchy, but they were also full of messy guitars, odd structures, half finished sounding vocals and lyrics that sometimes felt like inside jokes you weren't supposed to understand.",
+      "slanted and enchanted is a great example of this. it sounds rough and almost unfinished in places, but that was part of the appeal. then crooked rain, crooked rain came along in 1994 and showed that they could make much cleaner records without losing the weirdness. cut your hair became their closest thing to a big hit, which is funny considering how casually the band seemed to treat the whole idea of being successful.",
+      "one fun little detail is that stephen malkmus apparently used the word \"pavement\" because he liked how ordinary it sounded. there is nothing glamorous about pavement. it's literally just the ground you walk on, which somehow fits the band's whole attitude perfectly.",
+      "their guitars are another reason to pay attention. malkmus and scott kannberg often sound like they're playing around rather than trying to produce some perfectly coordinated guitar part. sometimes one guitar is doing something melodic while the other is making a completely different kind of noise. it gives the songs a slightly crooked feeling.",
+      "and then there are the lyrics. pavement could write something genuinely beautiful and then throw in a completely ridiculous line for no obvious reason. range life is a good example of their sense of humour, especially with the random mentions of the smashing pumpkins and stone temple pilots. they were clever, but they never wanted to sound too serious about it.",
+      "that's probably what makes pavement so easy to like. they could make interesting music without acting like they were making Important Music. everything feels a little loose, a little funny and just strange enough to make you listen again.",
     ],
+    artistUrl:
+      "https://open.spotify.com/artist/3inCNiUr4R6XQ3W43s9Aqi?si=jZ482ygCRxuJ_cx-S0nQRA",
   },
   {
     id: "throwing-muses",
     name: "throwing muses",
     type: "artist",
     genres: ["alternative"],
-    activeYears: "1981–",
-    description:
-      "kristin hersh’s band, formed in newport, rhode island, in 1981. one of the first american groups on 4ad. songs that could turn from folk-ish to feral without warning.",
-    history: [
-      { year: "1981", event: "formed" },
-      { year: "1986", event: "throwing muses" },
+    description: [
+      "throwing muses have always felt a little strange in the best way. they came out of rhode island in the 1980s and made alternative rock that didn't really follow the usual verse chorus formula. kristin hersh's songwriting could jump between soft melodies, jagged guitars and sudden bursts of noise, while tania donelly brought another completely different energy to the band. their self titled 1986 album is especially interesting because it sounds raw and slightly unhinged without feeling careless.",
+      "what makes them worth digging into is how unpredictable the songs can be. rhythms suddenly shift, guitars become almost abrasive, and then a beautiful melody appears right in the middle of it. they were never as commercially huge as some of the bands that came after them, but their influence shows up all over alternative rock. there is something very satisfying about finding a band like throwing muses and realising they were quietly doing things years before everyone else caught on.",
     ],
+    playlistUrl:
+      "https://open.spotify.com/playlist/2wiDVRDDMtsstp6UjpGyyp?si=VBOByyOgT8233XTejXOodQ",
   },
   {
     id: "mission-of-burma",
     name: "mission of burma",
     type: "artist",
     genres: ["alternative"],
-    activeYears: "1979–1983, 2002–",
-    description:
-      "boston post-punk, formed in 1979. tape loops, volume, and a short first life that still gets cited by people who were not there.",
-    history: [
-      { year: "1979", event: "formed" },
-      { year: "1982", event: "vs." },
+    description: [
+      "mission of burma came out of boston in the late 1970s and made music that sounded like it was constantly on the verge of falling apart. their songs had sharp guitars, sudden changes, strange time signatures and martin sovo's tape loops layered underneath the band. they were connected to the early american underground scene, but their sound was much more experimental than a lot of the punk around them.",
+      "their 1981 album *vs.* is probably the best place to start. it is short, loud and packed with ideas, with songs like *that's when i reach for my revolver* and *secrets*. the recording has this slightly rough quality that actually suits them perfectly. nothing feels overly polished, and the tension between the instruments is part of the appeal.",
+      "what makes mission of burma interesting is how much they managed to fit into such a small amount of music. the songs can switch direction without warning, the guitar sounds almost metallic in places, and the tape loops add this strange layer underneath everything. they never became a huge mainstream band, but their influence on american alternative and post punk is much bigger than their record sales would suggest. they sound like a band that was more interested in making something difficult and exciting than making something easy to listen to.",
     ],
+    artistUrl:
+      "https://open.spotify.com/artist/5UMQV83wwZCCvRSQCVjZw6?si=T9X7YK6qQBy7laAVp74Aaw",
   },
   {
     id: "dinosaur-jr",
     name: "dinosaur jr.",
     type: "artist",
     genres: ["alternative"],
-    activeYears: "1984–",
-    description:
-      "amherst, massachusetts, 1984. j mascis’s guitar tone — huge, singing, a little wrecked — and songs that sounded like hardcore kids who had found neil young.",
-    history: [
-      { year: "1984", event: "formed" },
-      { year: "1987", event: "you're living all over me" },
+    description: [
+      "dinosaur jr. have one of the best guitar sounds in alternative rock because everything feels ridiculously loud without losing the melody. they came out of amherst, massachusetts in the mid 1980s, with j mascis on guitar and vocals, mixing punk energy with huge distorted guitar solos.",
+      "you're living all over me from 1987 is the record i'd start with. it can sound almost sleepy one second and then suddenly explode into a wall of guitar. mascis's playing is the obvious attraction, but the melodies underneath all that distortion are what make the songs stick.",
+      "a fun detail is that mascis was originally more interested in drums before becoming known for guitar. you can hear that rhythmic instinct in his playing, especially in the way his solos move around the drums instead of just sitting on top of them.",
+      "then there's the album cover for you're living all over me. it has that weird, almost cartoonish dinosaur image with the band name slapped across it, and it ended up becoming one of those instantly recognisable underground rock covers. it looks chaotic and a little stupid in exactly the right way, which fits the band perfectly.",
+      "green mind from 1991 brought them to a much wider audience, especially with the wagon. but even as they became more visible, they never completely cleaned up the sound. the guitars stayed huge, the vocals stayed slightly buried and mascis still seemed perfectly happy letting a ridiculous guitar solo take over a song.",
+      "that's probably the best thing about dinosaur jr. they could make music that was loud enough to feel excessive while still writing genuinely beautiful melodies underneath it. the distortion is almost decoration around the songwriting.",
     ],
+    artistUrl:
+      "https://open.spotify.com/artist/267VY6GX5LyU5c9M85ECZQ?si=eqa5rXuDRpWgWIf9mIya2g",
   },
   {
     id: "the-breeders",
     name: "the breeders",
     type: "artist",
     genres: ["alternative"],
-    activeYears: "1989–",
-    description:
-      "started by kim deal in 1989, first as a side project from the pixies. last splash and “cannonball” took that off-kilter guitar language onto the radio.",
-    history: [
-      { year: "1989", event: "formed" },
-      { year: "1993", event: "last splash" },
+    description: [
+      "the breeders are one of those bands where the guitar can sound completely casual and still carry the whole song. they were formed by kim deal while she was still playing with the pixies, and their sound ended up being much less polished than the alternative rock that was starting to dominate the 90s.",
+      "pod from 1990 is a great place to start. it was recorded in edinburgh with steve albini, which gives the album that dry, close and slightly rough sound. the guitars aren't buried under layers of production, and the drums feel almost like they're sitting in the room with you. last splash from 1993 took the band somewhere bigger, especially with cannonball, but the album still has plenty of strange little arrangements and quieter moments.",
+      "one thing i like about the breeders is how they could make something catchy without making it feel overly constructed. kim deal's bass lines often carry as much personality as the guitars, and the songs can suddenly shift from sweet melodies into something noisy or awkward.",
+      "there's also a nice little bit of 90s alternative history around cannonball. that opening bass and drum section before the main guitar comes in is instantly recognisable, and the vocal effect on the chorus gives it this almost detached quality. it became their biggest song, but the rest of last splash is worth hearing because it shows that the band was doing much more than just making one huge alternative rock single",
     ],
+    playlistUrl:
+      "https://open.spotify.com/playlist/3avp34HE8bq9BIVeBqUkT5?si=DU8jTL2KQ42LVa-z98qR1Q",
   },
   {
     id: "the-afghan-whigs",
     name: "the afghan whigs",
     type: "artist",
     genres: ["alternative"],
-    activeYears: "1986–2001, 2012–",
-    description:
-      "cincinnati, 1986. soul, noise, and a bruised r&b feeling inside alternative rock. gentlemen is the record people hand you first.",
-    history: [
-      { year: "1986", event: "formed" },
-      { year: "1993", event: "gentlemen" },
+    description: [
+      "the afghan whigs came out of cincinnati in the late 1980s, which already puts them slightly outside the usual story people tell about american alternative rock. their sound pulled from punk, soul, r&b, garage rock and heavier guitar music, but the combination never sounded completely clean or predictable.",
+      "gentlemen is probably their best known record, but black love is where things get really interesting. the band started bringing in more percussion, samples, strings and soul influences, giving the album a much darker and fuller sound. greg dulli's vocals are a huge part of it too. he could sound almost restrained one moment and completely intense the next.",
+      "one detail i really like is their version of my world is empty without you. instead of trying to recreate the original motown feeling, they turned it into something much heavier and darker. it shows how the band treated their influences. they weren't interested in copying them. they pulled pieces from completely different places and made them fit their own sound.",
+      "they also had an unusual position in the 90s alternative scene. they were signed to elektra and had access to a major label, but their music never became as easy to package as the bigger alternative acts of the time. there was always something slightly uncomfortable about it, which is probably part of why their records have aged so well.",
     ],
-  },
-  {
-    id: "nevermind",
-    name: "nevermind",
-    type: "album",
-    artistId: "nirvana",
-    year: "1991",
-    description:
-      "released in september 1991 on dgc. it did not enter the world quietly for long. within months it had displaced the sound of the previous decade on the pop charts.",
-    playlistUrl: "https://open.spotify.com/playlist/37i9dQZF1DZ06evO2X1mUs",
+    playlistUrl:
+      "https://open.spotify.com/playlist/6hXGWTxigJPrcmSdudieFB?si=qT0QSzMySPS3s69C6iuQ9Q",
   },
   {
     id: "the-rolling-stones",
@@ -1127,7 +1125,6 @@ export const relationships = [
   { source: "nirvana", target: "alternative", type: "belongs_to" },
   { source: "pearl-jam", target: "grunge", type: "belongs_to" },
   { source: "green-river", target: "grunge", type: "belongs_to" },
-  { source: "nevermind", target: "nirvana", type: "released" },
   { source: "rem", target: "alternative", type: "belongs_to" },
   { source: "sonic-youth", target: "alternative", type: "belongs_to" },
   { source: "pixies", target: "alternative", type: "belongs_to" },
