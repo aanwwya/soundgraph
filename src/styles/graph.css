@@ -1,0 +1,121 @@
+.graph-frame .react-flow,
+.music-graph,
+.react-flow__renderer,
+.react-flow__pane,
+.react-flow__viewport {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+}
+
+.react-flow__background {
+  display: none;
+}
+
+.react-flow__node,
+.react-flow__node-genre,
+.react-flow__node-artist,
+.react-flow__node-album {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.react-flow__node.selected,
+.react-flow__node:focus,
+.react-flow__node:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.graph-handle {
+  opacity: 0;
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+  min-height: 6px;
+  border: none;
+  background: transparent;
+  pointer-events: none;
+}
+
+.graph-node {
+  padding: 6px 8px;
+  color: var(--ink);
+  transition: opacity 280ms ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.graph-node__label {
+  display: block;
+  white-space: nowrap;
+}
+
+.graph-node--genre .graph-node__label {
+  font-family: var(--literary);
+  font-style: italic;
+  font-size: 34px;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.graph-node--artist .graph-node__label {
+  font-family: var(--literary);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.graph-node--album .graph-node__label {
+  font-family: var(--body);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--muted);
+  line-height: 1;
+}
+
+@media (max-width: 700px) {
+  .graph-node--genre .graph-node__label {
+    font-size: 24px;
+  }
+
+  .graph-node--artist .graph-node__label {
+    font-size: 18px;
+  }
+
+  .graph-node--album .graph-node__label {
+    font-size: 13px;
+  }
+}
+
+.graph-node.is-selected {
+  transform: scale(1.04);
+}
+
+.graph-node.is-selected .graph-node__label {
+  color: var(--accent);
+}
+
+.graph-node.is-dimmed {
+  opacity: 0.22;
+}
+
+.react-flow__edge-path {
+  stroke: var(--line);
+  stroke-width: 0.9;
+}
+
+.react-flow__edge.is-related .react-flow__edge-path {
+  stroke: var(--accent);
+  stroke-width: 1.2;
+}
+
+.react-flow__edge.is-faded {
+  opacity: 0.16;
+}
+
+.react-flow__attribution {
+  display: none;
+}
