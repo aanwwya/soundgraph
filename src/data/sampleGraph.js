@@ -757,17 +757,15 @@ export const records = [
     name: "nirvana",
     type: "artist",
     genres: ["grunge", "alternative"],
-    activeYears: "1987–1994",
-    description:
-      "a trio from aberdeen, washington, whose second album pulled underground american guitar music into the center of popular culture.",
-    playlistUrl: "https://open.spotify.com/playlist/37i9dQZF1DZ06evO2X1mUs",
-    history: [
-      { year: "1987", event: "formed" },
-      { year: "1989", event: "bleach" },
-      { year: "1991", event: "nevermind" },
-      { year: "1993", event: "in utero" },
-      { year: "1994", event: "final period" },
+    description: [
+      "nirvana came out of aberdeen, washington in the late 1980s and ended up becoming one of the biggest bands in rock, even though their early records were built around a pretty raw underground sound. kurt cobain's songwriting had this strange ability to make something incredibly catchy while keeping the guitars rough and uncomfortable.",
+      "bleach from 1989 sounds nothing like the polished version of nirvana that most people first hear. it is heavy, dirty and very much rooted in the small club scene they came from. then nevermind arrived in 1991 and completely changed their scale. smells like teen spirit became enormous, but the album has plenty of quieter and stranger moments around it.",
+      "one of the fun details about never mind is the famous baby cover. the photograph was taken by kirk weddle, and the baby was later identified as spencer elden. the dollar bill and hook were added to create the image of a baby chasing money, which fit the band's discomfort with suddenly becoming part of the mainstream.",
+      "in utero from 1993 feels like a reaction to all of that attention. the production is much rougher, the songs are more abrasive and tracks like heart shaped box and rape me sound deliberately less comfortable. steve albini recorded most of the album, giving it a much more immediate sound.",
+      "what makes nirvana interesting to me isn't just how successful they became. it's how quickly their music moved from tiny underground venues to being played everywhere. they didn't invent loud guitars or alternative rock, but they changed what could suddenly become mainstream. a band that started out making noisy records in washington ended up shifting the entire direction of 90s rock.",
     ],
+    artistUrl:
+      "https://open.spotify.com/artist/6olE6TJLqED3rqDCT0FyPh?si=8sXvOXthTKqTTv7rzuFhjQ",
   },
   {
     id: "pearl-jam",
@@ -870,14 +868,15 @@ export const records = [
     name: "r.e.m.",
     type: "artist",
     genres: ["alternative"],
-    activeYears: "1980–2011",
-    description:
-      "formed in athens, georgia, in 1980. their first single, “radio free europe,” came out on hib-tone in a run of about a thousand copies and became a college-radio staple before they signed to i.r.s.",
-    history: [
-      { year: "1980", event: "formed" },
-      { year: "1981", event: "radio free europe" },
-      { year: "1983", event: "murmur" },
+    description: [
+      "r.e.m. came out of athens, georgia in the early 1980s and helped shape the sound of american alternative rock before the genre had even properly found its name. their early records had jangly guitars, slightly strange melodies and michael stipe's often hard to understand vocals. there was something deliberately hazy about them.",
+      "murmu r from 1983 is a great starting point. the title itself is missing the second “e” in murmur, which feels very r.e.m. the album sounds quiet and mysterious, with peter buck's twelve string guitar doing a lot of the work. radio free europe and talk about the passion show how much they could do without making everything loud.",
+      "a fun detail is that michael stipe didn't always want his lyrics to be completely obvious. early r.e.m. songs were full of strange images and fragmented lines, which meant people spent years trying to figure out what certain songs were actually about. sometimes even the band didn't seem interested in giving a straight answer.",
+      "then there is automatic for the people, which sounds much more polished and melancholic. everybody hurts became one of their biggest songs, but the album has a lot of quieter details that make it more interesting than just a collection of famous singles. peter buck even used mandolin on losing my religion, which helped give the song its unusual sound.",
+      "what i like about r.e.m. is how they managed to become massive without completely losing the strange little qualities that made their early music interesting. they could write a huge radio song and still leave enough ambiguity around it for you to wonder what you were actually listening to.",
     ],
+    artistUrl:
+      "https://open.spotify.com/artist/4KWTAlx2RvbpseOGMEmROg?si=EMg8MO5CSpCAw6WD626mNw",
   },
   {
     id: "sonic-youth",
@@ -898,14 +897,15 @@ export const records = [
     name: "the pixies",
     type: "artist",
     genres: ["alternative"],
-    activeYears: "1986–1993, 2004–",
-    description:
-      "boston, 1986. quiet verses, sudden volume, songs that sounded half-finished and completely sure of themselves. surfer rosa and doolittle became a template for a lot of what followed.",
-    history: [
-      { year: "1986", event: "formed" },
-      { year: "1988", event: "surfer rosa" },
-      { year: "1989", event: "doolittle" },
+    description: [
+      "the pixies are one of those bands where the quiet parts make the loud parts hit twice as hard. they came out of boston in the late 1980s and built their sound around this weird mix of surf rock, punk, noise, pop melodies and spanish influences. their songs could jump from something almost gentle to complete chaos without much warning.",
+      "surfer rosa from 1988 is probably the essential starting point. steve albini recorded it, and the production is famously raw and close. the drums sound huge, the guitars are rough around the edges and black francis's vocals can go from a whisper to a shout within the same song. the album cover also has that grainy black and white photography that fits the whole record.",
+      "then there's doolittle, which is probably their most accessible album without actually becoming normal. where is my mind? is obviously the song everyone knows, but tracks like debasser, gouge away and monkey gone to heaven show how strange their songwriting could get.",
+      "one of the coolest things about the pixies is their use of the loud quiet loud dynamic. a song might start almost empty, suddenly explode into distortion and then drop back down again. that approach became hugely influential on alternative rock, especially in the 90s.",
+      "and where is my mind? has its own little afterlife. it wasn't their biggest hit when it came out, but years later it became much more famous after being used in fight club. it's funny how a song can sit quietly in a band's catalogue for years and then suddenly become attached to an entire movie scene in people's heads.",
     ],
+    artistUrl:
+      "https://open.spotify.com/artist/6zvul52xwTWzilBZl6BUbT?si=efx8rs8hSweivAYTOvkOaA",
   },
   {
     id: "pavement",
