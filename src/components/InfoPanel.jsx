@@ -84,6 +84,41 @@ function ExternalArrow() {
   );
 }
 
+function getListenLinks(record, isGenre) {
+  if (record.artistUrl) {
+    return [{ href: record.artistUrl, label: "artist" }];
+  }
+
+  if (Array.isArray(record.playlists) && record.playlists.length) {
+    return record.playlists;
+  }
+
+  if (record.playlistUrl) {
+    return [
+      {
+        href: record.playlistUrl,
+        label: isGenre ? `${record.name} playlist` : "open playlist",
+      },
+    ];
+  }
+
+  return [];
+}
+
+function ListenLinks({ links }) {
+  if (!links.length) return null;
+
+  return links.map((link) => (
+    <p key={link.href} className="info-panel__listen">
+      <span aria-hidden="true">♫</span>
+      <a href={link.href} target="_blank" rel="noreferrer">
+        {link.label}
+        <ExternalArrow />
+      </a>
+    </p>
+  ));
+}
+
 export default function InfoPanel({ record, onSelect, onClose }) {
   if (!record) {
     return null;
@@ -95,12 +130,7 @@ export default function InfoPanel({ record, onSelect, onClose }) {
   const isGenre = record.type === "genre";
   const isArtist = record.type === "artist";
   const meta = typeLine(record);
-  const listenHref = record.artistUrl || record.playlistUrl;
-  const listenLabel = record.artistUrl
-    ? "artist"
-    : isGenre
-      ? `${record.name} playlist`
-      : "open playlist";
+  const listenLinks = getListenLinks(record, isGenre);
 
   return (
     <aside className="info-panel" aria-label={`${record.name} note`}>
@@ -144,16 +174,10 @@ export default function InfoPanel({ record, onSelect, onClose }) {
         </section>
       ) : null}
 
-      {listenHref ? (
+      {listenLinks.length ? (
         <section className="info-panel__section">
           <h3>listen</h3>
-          <p className="info-panel__listen">
-            <span aria-hidden="true">♫</span>
-            <a href={listenHref} target="_blank" rel="noreferrer">
-              {listenLabel}
-              <ExternalArrow />
-            </a>
-          </p>
+          <ListenLinks links={listenLinks} />
         </section>
       ) : null}
     </aside>
