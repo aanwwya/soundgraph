@@ -191,7 +191,6 @@ export default function MusicGraph({
     sim.box.width = bounds.width;
     sim.box.height = bounds.height;
     resizeSimulation(sim.simulation, sim.box);
-    setViewport({ x: 0, y: 0, zoom: 1 });
 
     setNodes((current) =>
       current.map((node) => {
@@ -203,7 +202,7 @@ export default function MusicGraph({
         };
       })
     );
-  }, [bounds, ready, isMobile, setNodes, setViewport]);
+  }, [bounds, ready, isMobile, setNodes]);
 
   function clampDrag(id, position) {
     if (isMobile) return position;
@@ -255,11 +254,11 @@ export default function MusicGraph({
         onNodeDragStop={handleNodeDragStop}
         onPaneClick={() => onSelect(null)}
         defaultViewport={{ x: 0, y: 0, zoom: 1 }}
-        minZoom={isMobile ? 0.28 : 1}
-        maxZoom={isMobile ? 2.2 : 1}
-        panOnDrag={isMobile}
-        zoomOnScroll={isMobile}
-        zoomOnPinch={isMobile}
+        minZoom={0.28}
+        maxZoom={2.2}
+        panOnDrag
+        zoomOnScroll
+        zoomOnPinch
         zoomOnDoubleClick={false}
         panOnScroll={false}
         preventScrolling
