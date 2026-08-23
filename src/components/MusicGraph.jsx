@@ -16,11 +16,18 @@ import {
 } from "../utils/graphUtils.js";
 import {
   createForceSimulation,
+  getMobileWorldSize,
   pinSimNode,
   resizeSimulation,
   syncSimNodeSize,
   unpinSimNode,
 } from "../utils/forceLayout.js";
+
+const MOBILE_QUERY = "(max-width: 768px)";
+
+function readIsMobile() {
+  return window.matchMedia(MOBILE_QUERY).matches;
+}
 
 const nodeTypes = {
   genre: GraphNode,
@@ -42,16 +49,24 @@ export default function MusicGraph({
   const [bounds, setBounds] = useState({ width: 0, height: 0 });
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState(createFlowEdges());
-  const { setViewport } = useReactFlow();
+  const { setViewport, fitView } = useReactFlow();
   const selectedIdRef = useRef(selectedId);
   const simRef = useRef(null);
   const boundsRef = useRef(bounds);
   boundsRef.current = bounds;
+  const [isMobile, setIsMobile] = useState(readIsMobile);
   const ready = bounds.width >= 80 && bounds.height >= 80;
 
   useEffect(() => {
     selectedIdRef.current = selectedId;
   }, [selectedId]);
+
+  useEffect(() => {
+    const media = window.matchMedia(MOBILE_QUERY);
+    const onChange = () => setIsMobile(media.matches);
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, []);
 
   useEffect(() => {
     const frame = frameRef.current;
@@ -99,14 +114,20 @@ export default function MusicGraph({
   useEffect(() => {
     if (!ready) return undefined;
 
-    const box = {
-      width: boundsRef.current.width,
-      height: boundsRef.current.height,
-    };
-    const seededNodes = createFlowNodes(box.width, box.height).map((node) => ({
-      ...node,
-      position: clampNodePosition(node.position, node.data.size, box),
-    }));
+    const box = isMobile
+      ? getMobileWorldSize()
+      : {
+          width: boundsRef.current.width,
+          height: boundsRef.current.height,
+        };
+    const seededNodes = createFlowNodes(box.width, box.height).map((node) =>
+      isMobile
+        ? node
+        : {
+            ...node,
+            position: clampNodePosition(node.position, node.data.size, box),
+          }
+    );
     const seededEdges = createFlowEdges();
     const next = applySelectionState(
       seededNodes,
@@ -116,12 +137,15 @@ export default function MusicGraph({
 
     setNodes(next.nodes);
     setEdges(next.edges);
-    setViewport({ x: 0, y: 0, zoom: 1 });
+    if (!isMobile) {
+      setViewport({ x: 0, y: 0, zoom: 1 });
+    }
 
     const { simulation, simNodes } = createForceSimulation({
       nodes: next.nodes,
       edges: next.edges,
       box,
+      isMobile,
       onTick: (positions) => {
         setNodes((current) =>
           current.map((node) => {
@@ -130,28 +154,37 @@ export default function MusicGraph({
 
             const size = getNodeSize(node);
             syncSimNodeSize(simNodes, node.id, size);
+
+            const nextPosition = { x: simNode.x, y: simNode.y };
+
             return {
               ...node,
-              position: clampNodePosition(
-                { x: simNode.x, y: simNode.y },
-                size,
-                boundsRef.current
-              ),
+              position: isMobile
+                ? nextPosition
+                : clampNodePosition(nextPosition, size, boundsRef.current),
             };
           })
         );
       },
+      onEnd: () => {
+        if (!isMobile) return;
+        requestAnimationFrame(() => {
+          fitView({ padding: 0.22, duration: 420, maxZoom: 0.95 });
+        });
+      },
     });
 
-    simRef.current = { simulation, simNodes, box };
+    simRef.current = { simulation, simNodes, box, isMobile };
 
     return () => {
       simulation.stop();
       simRef.current = null;
     };
-  }, [ready, resetNonce, setNodes, setEdges, setViewport]);
+  }, [ready, resetNonce, isMobile, setNodes, setEdges, setViewport, fitView]);
 
   useEffect(() => {
+    if (isMobile) return;
+
     const sim = simRef.current;
     if (!sim || !ready) return;
 
@@ -170,9 +203,10 @@ export default function MusicGraph({
         };
       })
     );
-  }, [bounds, ready, setNodes, setViewport]);
+  }, [bounds, ready, isMobile, setNodes, setViewport]);
 
   function clampDrag(id, position) {
+    if (isMobile) return position;
     const node = nodes.find((item) => item.id === id);
     return clampNodePosition(position, getNodeSize(node), boundsRef.current);
   }
@@ -221,11 +255,11 @@ export default function MusicGraph({
         onNodeDragStop={handleNodeDragStop}
         onPaneClick={() => onSelect(null)}
         defaultViewport={{ x: 0, y: 0, zoom: 1 }}
-        minZoom={1}
-        maxZoom={1}
-        panOnDrag={false}
-        zoomOnScroll={false}
-        zoomOnPinch={false}
+        minZoom={isMobile ? 0.28 : 1}
+        maxZoom={isMobile ? 2.2 : 1}
+        panOnDrag={isMobile}
+        zoomOnScroll={isMobile}
+        zoomOnPinch={isMobile}
         zoomOnDoubleClick={false}
         panOnScroll={false}
         preventScrolling

@@ -73,7 +73,83 @@ function forceBounds(simNodes, box) {
   };
 }
 
-export function createForceSimulation({ nodes, edges, box, onTick }) {
+const MOBILE_WORLD = { width: 980, height: 1320 };
+
+export function getMobileWorldSize() {
+  return { ...MOBILE_WORLD };
+}
+
+function createMobileForceSimulation({ nodes, edges, onTick, onEnd }) {
+  const world = MOBILE_WORLD;
+
+  const simNodes = nodes.map((node) => {
+    const size = node.data?.size ?? { width: 140, height: 40 };
+    const label = node.data?.label ?? "";
+    const extra = node.type === "genre" ? 36 : 28;
+
+    return {
+      id: node.id,
+      x: node.position.x,
+      y: node.position.y,
+      label,
+      nodeType: node.type,
+      size,
+      radius: Math.max(size.width, size.height) / 2 + extra,
+    };
+  });
+
+  const simLinks = edges.map((edge) => {
+    const type = edge.data?.relType;
+    let distance = 260;
+    if (type === "released") distance = 200;
+    if (type === "belongs_to") distance = 250;
+    if (type === "subgenre_of") distance = 300;
+    return { source: edge.source, target: edge.target, distance };
+  });
+
+  const simulation = forceSimulation(simNodes)
+    .force("charge", forceManyBody().strength(-920))
+    .force(
+      "link",
+      forceLink(simLinks)
+        .id((node) => node.id)
+        .distance((link) => link.distance)
+        .strength(0.18)
+    )
+    .force(
+      "collide",
+      forceCollide((node) => node.radius).iterations(4)
+    )
+    .force("x", forceX(world.width / 2).strength(0.012))
+    .force("y", forceY(world.height / 2).strength(0.012))
+    .alpha(0.9)
+    .alphaDecay(0.028)
+    .alphaMin(0.012)
+    .velocityDecay(0.4);
+
+  simulation.on("tick", () => {
+    onTick(new Map(simNodes.map((node) => [node.id, node])));
+  });
+
+  if (onEnd) {
+    simulation.on("end", onEnd);
+  }
+
+  return { simulation, simNodes, box: world };
+}
+
+export function createForceSimulation({
+  nodes,
+  edges,
+  box,
+  onTick,
+  onEnd,
+  isMobile = false,
+}) {
+  if (isMobile) {
+    return createMobileForceSimulation({ nodes, edges, onTick, onEnd });
+  }
+
   const scale = layoutScale(box.width, box.height);
 
   const simNodes = nodes.map((node) => ({
