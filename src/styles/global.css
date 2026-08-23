@@ -133,7 +133,7 @@ a:hover {
 
   .site-mark__note {
     font-size: 18px;
-    max-width: 16ch;
+    white-space: nowrap;
   }
 
   .graph-controls {
