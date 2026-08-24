@@ -26,7 +26,10 @@ export default function Home() {
         />
 
         <GraphControls
-          onReset={() => setResetNonce((value) => value + 1)}
+          onReset={() => {
+            setSelectedId(null);
+            setResetNonce((value) => value + 1);
+          }}
         />
 
         <InfoPanel

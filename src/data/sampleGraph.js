@@ -3208,6 +3208,30 @@ export const records = [
     name: "west coast hip-hop",
     type: "genre",
     relatedGenres: ["hip-hop"],
+    description: [
+      "west coast hip-hop grew into its own distinct sound during the 1980s and early 1990s, with los angeles becoming its most influential center. the music reflected the atmosphere of california's urban communities, combining sharp street narratives with laid-back production, funk samples and heavy low-end. unlike the faster, sample-dense sound developing in new york, west coast producers often left more room around the drums, allowing the bass and vocals to sit prominently in the mix.",
+      "the scene changed dramatically with artists such as n.w.a., who brought a much more direct and confrontational voice to rap. their music documented life in compton and south central los angeles while addressing police violence, poverty and the tensions surrounding street life. their success helped establish west coast rap as a major force and opened the door for a generation of artists from the region.",
+      "production became just as important as the writing. dr. dre helped shape the g-funk sound with slow grooves, deep basslines, melodic synthesizers and funk-inspired samples. records such as the chronic gave west coast hip-hop a warmer, more spacious sound while keeping the genre's hard-edged storytelling intact.",
+      "the movement eventually spread well beyond los angeles. the bay area developed its own character through artists such as too $hort and e-40, while sacramento, oakland and other california scenes added their own dialects, production styles and perspectives. by the 1990s, west coast hip-hop was no longer a single sound but a collection of regional movements connected by their california roots.",
+    ],
+    importantArtists: [
+      "snoop-dogg",
+      "ice-cube",
+      "eazy-e",
+      "too-short",
+      "e-40",
+      "ice-t",
+      "mc-ren",
+      "kurupt",
+      "the-lady-of-rage",
+      "spice-1",
+      "luniz",
+      "del-the-funky-homosapien",
+      "souls-of-mischief",
+      "the-pharcyde",
+    ],
+    playlistUrl:
+      "https://open.spotify.com/playlist/1zN0HwuGOOS3KOOlIRNjWX?si=r01U3bTdSUGtxhnxLaVEnw",
   },
   {
     id: "southern-hip-hop",
@@ -3362,7 +3386,7 @@ export const records = [
     id: "snoop-dogg",
     name: "snoop dogg",
     type: "artist",
-    genres: ["hip-hop"],
+    genres: ["hip-hop", "west-coast-hip-hop"],
     onGraph: false,
   },
   {
@@ -3691,7 +3715,7 @@ export const records = [
     id: "ice-t",
     name: "ice-t",
     type: "artist",
-    genres: ["gangsta-rap"],
+    genres: ["gangsta-rap", "west-coast-hip-hop"],
     onGraph: false,
   },
   {
@@ -3705,21 +3729,21 @@ export const records = [
     id: "ice-cube",
     name: "ice cube",
     type: "artist",
-    genres: ["gangsta-rap"],
+    genres: ["gangsta-rap", "west-coast-hip-hop"],
     onGraph: false,
   },
   {
     id: "eazy-e",
     name: "eazy-e",
     type: "artist",
-    genres: ["gangsta-rap"],
+    genres: ["gangsta-rap", "west-coast-hip-hop"],
     onGraph: false,
   },
   {
     id: "too-short",
     name: "too $hort",
     type: "artist",
-    genres: ["gangsta-rap"],
+    genres: ["gangsta-rap", "west-coast-hip-hop"],
     onGraph: false,
   },
   {
@@ -3768,7 +3792,7 @@ export const records = [
     id: "spice-1",
     name: "spice 1",
     type: "artist",
-    genres: ["gangsta-rap"],
+    genres: ["gangsta-rap", "west-coast-hip-hop"],
     onGraph: false,
   },
   {
@@ -3783,6 +3807,62 @@ export const records = [
     name: "three 6 mafia",
     type: "artist",
     genres: ["gangsta-rap"],
+    onGraph: false,
+  },
+  {
+    id: "e-40",
+    name: "e-40",
+    type: "artist",
+    genres: ["west-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "mc-ren",
+    name: "mc ren",
+    type: "artist",
+    genres: ["west-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "kurupt",
+    name: "kurupt",
+    type: "artist",
+    genres: ["west-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "the-lady-of-rage",
+    name: "the lady of rage",
+    type: "artist",
+    genres: ["west-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "luniz",
+    name: "luniz",
+    type: "artist",
+    genres: ["west-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "del-the-funky-homosapien",
+    name: "del the funky homosapien",
+    type: "artist",
+    genres: ["west-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "souls-of-mischief",
+    name: "souls of mischief",
+    type: "artist",
+    genres: ["west-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "the-pharcyde",
+    name: "the pharcyde",
+    type: "artist",
+    genres: ["west-coast-hip-hop"],
     onGraph: false,
   },
   {
@@ -3838,18 +3918,42 @@ export const records = [
     name: "tortoise",
     type: "artist",
     genres: ["post-rock"],
+    description: [
+      "tortoise emerged from chicago in the early 1990s and became one of the most important groups associated with the development of post-rock. built around musicians with backgrounds in indie rock, jazz and experimental music, the band treated the studio and live setup almost like a laboratory. guitars were only one part of their palette, alongside bass, vibraphone, keyboards, percussion, electronics and other instruments.",
+      "their early records established a patient, instrumental style that was very different from conventional rock songwriting. millions now living will never die became a landmark release, particularly for its long-form compositions and carefully layered arrangements. rather than building toward a traditional chorus, tortoise allowed pieces to develop through repetition, subtle changes in rhythm and shifts between different textures.",
+      "standards, released in 2001, pushed their sound into even more rhythmic territory. jazz became increasingly important, especially in the way the band approached drums and percussion. electronic music and dub also influenced their production, giving their tracks a spacious, almost architectural quality. different instruments often seem to occupy separate spaces within the same composition, making the music feel constructed rather than simply performed.",
+      "what makes tortoise important to post-rock is the way they blurred the boundaries around it. their music could move between post-rock, jazz, electronic music, minimalism and experimental composition without settling comfortably into any one category. instead of using distortion and huge crescendos as the main source of intensity, they found excitement in rhythm, texture and small changes, helping establish a more cerebral and exploratory side of the genre.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/3WggbHDpj4rPKbL97zG5MQ?si=cHuQ_h33ShOr3jcrmK2Gpw",
   },
   {
     id: "mogwai",
     name: "mogwai",
     type: "artist",
     genres: ["post-rock"],
+    description: [
+      "mogwai emerged from glasgow, scotland, in the mid-1990s and became one of the defining bands of the post-rock movement. rather than building songs around traditional verse-and-chorus structures, they treated guitar, bass, drums and dynamics as the main language of the music. their tracks could begin with almost nothing and gradually expand into enormous walls of sound, making the journey from quiet to loud just as important as the melody itself.",
+      "their 1997 debut, mogwai young team, established much of what would become their signature. the album moved between delicate guitar passages, distorted riffs and long instrumental builds, creating music that felt cinematic without relying on vocals to tell a story. unlike many rock bands, mogwai often let repetition do the work, allowing a single musical idea to become increasingly powerful through changes in volume, texture and intensity.",
+      "as their catalogue developed, they became more interested in atmosphere and subtle detail. albums such as come on die young and rock action showed different sides of the band, moving between fragile compositions and heavier, more abrasive sections. their later work also incorporated electronics, orchestration and soundtrack-like arrangements, expanding the boundaries of what their instrumental music could contain.",
+      "mogwai's influence comes largely from their understanding of contrast. a quiet guitar line can feel enormous when it has been given enough space, while a distorted climax becomes more effective because of everything that came before it. their music helped establish post-rock as a genre where atmosphere, dynamics and gradual development could replace conventional songwriting structures.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/34UhPkLbtFKRq3nmfFgejG?si=nIiwLCLtQ0a2JFYxKXiAZQ",
   },
   {
     id: "slint",
     name: "slint",
     type: "artist",
     genres: ["post-rock"],
+    description: [
+      "slint formed in louisville, kentucky, in the mid-1980s, but their influence on post-rock came largely from the music they developed toward the end of the decade. the band took the rawness of punk and hardcore and slowed it down, leaving enormous amounts of space between riffs and allowing tension to build almost uncomfortably. their music could shift from restrained passages into sudden bursts of distortion without relying on a conventional verse-chorus structure.",
+      "their 1991 album spiderland became one of the most important records connected to the emergence of post-rock. the songs are built around repetition, unusual time signatures, whispered and spoken vocals, and dramatic changes in volume. rather than simply getting louder for a climax, slint often made the listener wait for it, creating a sense that something unsettling was always about to happen.",
+      "the band's guitar work was especially distinctive. riffs could sound almost skeletal when played quietly, then become overwhelming when the full band entered. brian mcmahon's vocals added another layer of tension, moving between detached narration, murmuring and sudden intensity. the lyrics also avoided straightforward storytelling, using strange images and fragmented scenes that made the songs feel more like half-remembered stories.",
+      "although slint existed for only a short period, spiderland became hugely influential on the generation of musicians that followed. their combination of post-hardcore, noise, minimalism and unconventional song structures helped establish a blueprint for post-rock's darker side. bands could take the emotional force of rock without needing traditional hooks, using silence, repetition and dynamics to create tension instead.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/4IwOItqRhsIoRuD5HP4vyC?si=iIyGo6T0T02MkE0EC1c8aQ",
   },
   {
     id: "explosions-in-the-sky",
@@ -3874,12 +3978,28 @@ export const records = [
     name: "wayne shorter",
     type: "artist",
     genres: ["jazz", "jazz-fusion"],
+    description: [
+      "wayne shorter became one of the most important saxophonists in modern jazz, particularly during the shift from hard bop toward more exploratory and electric forms. his playing was rarely about simply filling space with notes. he often built melodies around unusual intervals, unexpected pauses and phrases that seemed to leave questions hanging, giving his improvisations a distinctive sense of tension.",
+      "his early work with art blakey's jazz messengers helped establish him within the hard bop tradition, but his compositions quickly showed that he was interested in pushing beyond its boundaries. pieces such as “footprints” and “witch hunt” became important examples of his ability to write melodies that were memorable without being predictable, using harmony in ways that gave musicians considerable freedom during improvisation.",
+      "shorter became a central figure in miles davis's second great quintet during the 1960s, contributing both saxophone playing and compositions to a group that radically expanded the possibilities of small group jazz. his writing also became central to weather report, the electric jazz group he formed with joe zawinul. there, synthesizers, electric bass, percussion and studio experimentation brought his compositional ideas into the emerging world of jazz fusion.",
+      "what makes shorter's work stand out is the way he treated composition and improvisation as closely connected. whether working in acoustic jazz or electric fusion, his music often feels spacious, unpredictable and slightly unresolved. his influence can be heard across generations of jazz musicians who adopted his approach to harmony, melody and musical experimentation.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/0ZqhrTXYPA9DZR527ZnFdO?si=-_i7kIxaQOG2us1rgSUBOA",
   },
   {
     id: "pharoah-sanders",
     name: "pharoah sanders",
     type: "artist",
     genres: ["jazz"],
+    description: [
+      "pharoah sanders emerged from arkansas and became one of the most powerful voices in the development of free and spiritual jazz. after moving to new york in the early 1960s, he entered a scene where musicians were questioning the structures that had defined earlier jazz. his saxophone playing was raw, physical and often deliberately abrasive, using shrieks, multiphonics and long bursts of sound alongside quieter, meditative passages.",
+      "his association with john coltrane became a major turning point. sanders joined coltrane's later groups and appeared on records such as ascension, meditations and om, becoming part of coltrane's increasingly spiritual and experimental direction. their music moved far beyond conventional harmony and song forms, treating improvisation almost as a form of emotional and spiritual expression.",
+      "sanders developed his own voice further on albums such as karma, released in 1969. the record's centerpiece, “the creator has a master plan,” stretches across an extended performance built around repetition, chanting, percussion and expansive saxophone improvisation. rather than rushing toward a conventional climax, the music gradually accumulates intensity, creating a feeling closer to a ritual than a standard jazz composition.",
+      "throughout his career, sanders continued moving between free jazz, spiritual jazz, african influences, avant-garde composition and more melodic forms. his playing could be chaotic and overwhelming one moment, then surprisingly tender the next. that contrast became central to his identity and helped make him one of the defining figures of spiritual and experimental jazz.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/3JLUCojZaHrX2LaUkSj7Ud?si=me5x0zIiQIeB3dKB3ObhVA",
   },
   {
     id: "slayer",
@@ -3898,18 +4018,84 @@ export const records = [
     name: "megadeth",
     type: "artist",
     genres: ["metal"],
+    description: [
+      "megadeth emerged from los angeles in the mid 1980s and became one of the defining bands of thrash metal. their sound combined rapid guitar riffs, aggressive drumming and complex arrangements with a strong emphasis on technical playing. compared with many of their contemporaries, megadeth often pushed further into intricate rhythm changes and tightly constructed guitar parts.",
+      "their early records established a raw and aggressive style, but albums such as peace sells... but who's buying?, rust in peace and countdown to extinction showed the band becoming increasingly precise and ambitious. rust in peace in particular is known for its elaborate guitar work, fast transitions and tightly arranged compositions, making it one of the landmark records of technical thrash.",
+      "the band's lyrics frequently dealt with war, political corruption, nuclear destruction and social instability. rather than treating heavy metal purely as a source of aggression, megadeth used its intensity to reinforce subjects that were often bleak and confrontational. this gave their music a sharper edge beyond the speed and technicality of the instrumentation.",
+      "megadeth's influence extends well beyond thrash metal. their combination of speed, precision and complicated guitar writing helped create a bridge between traditional heavy metal and the more technically demanding forms of extreme and progressive metal that developed later. their sound remains closely associated with the evolution of metal during the 1980s and 1990s.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/1Yox196W7bzVNZI7RBaPnf?si=bla-fz7NQ-qpv2ors6t8IQ",
   },
   {
     id: "tool",
     name: "tool",
     type: "artist",
     genres: ["progressive-metal"],
+    description: [
+      "tool emerged from los angeles in the early 1990s and gradually became one of the defining bands of progressive metal and alternative metal. their music is built around tension, repetition and gradual shifts rather than conventional verse and chorus structures. heavy guitar riffs sit alongside quieter passages, unusual rhythmic patterns and long instrumental sections, giving their songs a feeling of movement even when the underlying idea stays relatively simple.",
+      "their early records, particularly undertow and ænima, established a darker and more experimental approach to alternative metal. as the band developed, albums such as lateralus and 10,000 days became increasingly ambitious, incorporating complex time signatures, polyrhythms and extended arrangements. the rhythm section often plays as important a role as the guitars, with danny carey's drumming becoming a major part of the band's identity.",
+      "tool's music also stands out for the way it treats atmosphere as part of the composition. distorted riffs can suddenly give way to silence, percussion or atmospheric guitar textures before the heavier material returns. maynard james keenan's vocals are often used sparingly, allowing the instrumental sections to carry much of the tension.",
+      "rather than chasing technical complexity for its own sake, tool tends to make difficult musical ideas feel deliberate and immersive. their combination of progressive structures, alternative metal heaviness and experimental production helped broaden what progressive metal could sound like, influencing bands that followed while maintaining a sound that remains difficult to place neatly inside a single genre.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/2yEwvVSSSUkcLeSTNyHKh8?si=jJXIBrtGQrSjc6xkgbJIaw",
   },
   {
     id: "opeth",
     name: "opeth",
     type: "artist",
     genres: ["progressive-metal"],
+    description: [
+      "opeth emerged from stockholm, sweden, in the early 1990s and gradually became one of progressive metal's most distinctive bands. their music draws from death metal, progressive rock, folk and 1970s-era heavy music, often placing delicate acoustic passages directly beside crushing distorted sections. instead of keeping those elements separated, opeth built entire songs around the contrast between them.",
+      "their early albums leaned heavily into death metal, with mikael åkerfeldt's growled vocals, intricate guitar work and long compositions forming the core of the sound. morningrise and my arms, your hearse showed the band becoming increasingly ambitious, while still life and blackwater park brought greater attention to melody, atmosphere and songwriting. blackwater park, produced with steven wilson of porcupine tree, became one of their defining records.",
+      "one of opeth's most recognizable traits is the way their songs refuse to stay in one mood. a track might begin with fingerpicked acoustic guitar, move into a soft progressive-rock passage, suddenly erupt into death-metal riffing and then return to the original melody. these transitions are rarely just there for shock value; they allow the band to build long musical narratives instead of relying on conventional song structures.",
+      "later in their career, opeth moved away from death-metal vocals and embraced a stronger progressive-rock direction. albums such as heritage, pale communion and sorceress focused almost entirely on clean singing, vintage keyboards, mellotron textures and 1970s-inspired arrangements. this shift divided some longtime listeners, but it showed how far the band was willing to move beyond the boundaries of progressive metal.",
+    ],
+    importantArtists: [
+      "mikael-akerfeldt",
+      "peter-lindgren",
+      "martin-mendez",
+      "martin-lopez",
+      "fredrik-akesson",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/0ybFZ2Ab08V8hueghSXm6E?si=Nt9mq25BSh-KE_Y1Pz81qQ",
+  },
+  {
+    id: "mikael-akerfeldt",
+    name: "mikael åkerfeldt",
+    type: "artist",
+    genres: ["progressive-metal"],
+    onGraph: false,
+  },
+  {
+    id: "peter-lindgren",
+    name: "peter lindgren",
+    type: "artist",
+    genres: ["progressive-metal"],
+    onGraph: false,
+  },
+  {
+    id: "martin-mendez",
+    name: "martin méndez",
+    type: "artist",
+    genres: ["progressive-metal"],
+    onGraph: false,
+  },
+  {
+    id: "martin-lopez",
+    name: "martin lopez",
+    type: "artist",
+    genres: ["progressive-metal"],
+    onGraph: false,
+  },
+  {
+    id: "fredrik-akesson",
+    name: "fredrik åkesson",
+    type: "artist",
+    genres: ["progressive-metal"],
+    onGraph: false,
   },
   {
     id: "meshuggah",
@@ -3922,6 +4108,14 @@ export const records = [
     name: "dream theater",
     type: "artist",
     genres: ["progressive-metal"],
+    description: [
+      "dream theater became one of the defining bands of progressive metal by combining the weight of heavy metal with the elaborate structures and musicianship of progressive rock. formed in massachusetts in the mid 1980s, the band developed a sound built around long compositions, shifting time signatures, extended instrumental passages and frequent changes in mood. their songs often feel closer to multi part compositions than conventional rock tracks.",
+      "their breakthrough came with images and words in 1992, an album that helped establish progressive metal as a more visible style during a period when grunge and alternative rock dominated much of the mainstream. “pull me under” became their best known song, but the album also demonstrated the band's interest in complex arrangements, melodic songwriting and instrumental interplay.",
+      "technical ability is a major part of dream theater's identity, but their music is not simply about showing off. john petrucci's guitar work, jordan rudess's keyboards, john myung's bass and the band's intricate drumming create arrangements where different instruments constantly respond to one another. songs such as “metropolis pt. 1” and the extended pieces on six degrees of inner turbulence show how far they could stretch a composition while still maintaining recurring musical themes.",
+      "their later albums continued to explore different sides of progressive metal, moving between heavy riffs, orchestral textures, melodic sections and extended instrumental passages. dream theater helped establish a template for modern progressive metal in which technical precision, ambitious songwriting and heavy guitar work could exist within the same framework.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/2aaLAng2L2aWD2FClzwiep?si=Ph8VEeIiTKaK-UVJzG2FIw",
   },
   {
     id: "gang-starr",
@@ -3998,18 +4192,42 @@ export const records = [
     name: "pete rock",
     type: "artist",
     genres: ["hip-hop", "boom-bap"],
+    description: [
+      "pete rock came out of the bronx and built his reputation as one of hip-hop's most influential producers during the golden era of the early 1990s. his production was shaped by a deep knowledge of soul, jazz and funk, but what made his work distinctive was the way he transformed those records rather than simply placing them behind a rapper. chopped horns, warm basslines, dusty drums and carefully selected vocal fragments became part of a sound that felt rich without becoming crowded.",
+      "his partnership with cl smooth produced some of his most celebrated work. mecca and the soul brother, released in 1992, became a landmark of jazz-inflected boom bap, with pete rock handling much of the production while cl smooth delivered thoughtful, detailed verses. tracks like “they reminisce over you (t.r.o.y.)” showed how a relatively simple groove could carry enormous emotional weight.",
+      "outside of his work as a duo, pete rock became a sought-after producer and collaborator, working with artists across the hip-hop landscape. his production credits helped connect the worlds of underground rap, jazz rap and mainstream hip-hop, while his use of sampling influenced countless producers who followed.",
+      "what makes pete rock important is his ear for texture. his beats rarely feel like collections of samples thrown together; the drums, horns, bass and vocal fragments are arranged almost like a collage, with each piece occupying its own space. that approach helped define the sound of 1990s boom bap and established him as one of the producers most responsible for hip-hop's rich, sample-driven aesthetic.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/3BeQqzKdlARoOd6y30kCO2?si=3cOz9govQK-rOShgqVxIsw",
   },
   {
     id: "aretha-franklin",
     name: "aretha franklin",
     type: "artist",
     genres: ["soul"],
+    description: [
+      "aretha franklin had the kind of voice that could make a song feel completely different from the moment she touched it. she grew up singing gospel in detroit, and you can hear that background in almost everything she did. the way she stretches a note, changes her phrasing or suddenly pushes her voice harder when a song needs more weight makes her performances feel incredibly alive. there was always something very physical about her singing.",
+      "her biggest run came after she signed with atlantic records in the late 1960s. songs like “respect,” “think” and “chain of fools” turned her into one of the defining voices of soul, but what makes those recordings last isn't just how powerful she sounded. she had an instinct for knowing exactly when to hold back and when to let the whole thing explode.",
+      "she was also much more than a vocalist. franklin played piano, arranged parts of her own music and had a strong sense of how a song should feel. she could take something written by another artist and make it sound as though it had always belonged to her. that ability to completely inhabit a song is probably one of the biggest reasons so many singers who came after her ended up being compared to her.",
+      "there's also something interesting about how her music sits between different worlds. gospel, blues, r&b and soul are all there, but none of them completely explain her. she could sound intimate one moment and enormous the next. that's what makes aretha feel less like a singer who happened to become famous and more like someone who genuinely changed what people expected a voice in popular music to be.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/7nwUJBm0HE4ZxD3f5cy5ok?si=dqDoBg0OQby48_pvbjLzfA",
   },
   {
     id: "otis-redding",
     name: "otis redding",
     type: "artist",
     genres: ["soul"],
+    description: [
+      "otis redding became one of the central voices of southern soul during the 1960s, with a style that brought together gospel intensity, blues phrasing and the tight rhythmic sound coming out of memphis. his performances were often built around gradual tension, with restrained verses giving way to increasingly powerful vocals and fuller arrangements.",
+      "his work with stax records placed him alongside some of the most important musicians in the memphis soul scene. the combination of redding's rough vocal delivery, prominent horns, driving rhythm sections and gospel influenced arrangements created a sound that felt raw without losing its melodic structure. songs such as “try a little tenderness” became especially notable for the way they transform from a gentle opening into an explosive final section.",
+      "redding also helped connect southern soul with rock audiences. his performances at the monterey pop festival introduced his music to a wider counterculture audience, while his interpretations of songs from outside the soul tradition showed how easily his sound could absorb different influences.",
+      "his later recordings moved toward a softer and more reflective style. “(sittin' on) the dock of the bay,” released shortly after his death, marked a noticeable change from the intensity of his earlier work and hinted at a more restrained direction. despite his short career, redding became one of the key figures in the development of soul and helped establish the memphis sound as an important branch of american popular music.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/60df5JBRRPcnSpsIMxxwQm?si=_2FAFnZASLmO2-yBSWO2gw",
   },
   {
     id: "marvin-gaye",

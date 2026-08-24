@@ -5,10 +5,10 @@ export const GRAPH_MARGIN = 28;
 function estimateNodeSize(record) {
   const label = record.name ?? "";
   if (record.type === "genre") {
-    return { width: Math.max(88, label.length * 15), height: 48 };
+    return { width: Math.max(96, label.length * 17), height: 50 };
   }
   if (record.type === "artist") {
-    return { width: Math.max(72, label.length * 11), height: 36 };
+    return { width: Math.max(80, label.length * 13), height: 38 };
   }
   return { width: Math.max(64, label.length * 8), height: 28 };
 }

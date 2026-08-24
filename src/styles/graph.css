@@ -96,6 +96,11 @@
   color: var(--accent);
 }
 
+.graph-frame.is-overview .graph-node--artist:not(.is-selected) .graph-node__label,
+.graph-frame.is-overview .graph-node--album:not(.is-selected) .graph-node__label {
+  opacity: 0;
+}
+
 .graph-node.is-dimmed {
   opacity: 0.22;
 }

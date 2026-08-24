@@ -16,6 +16,7 @@ import {
 } from "../utils/graphUtils.js";
 import {
   createForceSimulation,
+  getDesktopWorldSize,
   getMobileWorldSize,
   pinSimNode,
   resizeSimulation,
@@ -114,12 +115,8 @@ export default function MusicGraph({
   useEffect(() => {
     if (!ready) return undefined;
 
-    const box = isMobile
-      ? getMobileWorldSize()
-      : {
-          width: boundsRef.current.width,
-          height: boundsRef.current.height,
-        };
+    const view = boundsRef.current;
+    const box = isMobile ? getMobileWorldSize() : getDesktopWorldSize(view);
     const seededNodes = createFlowNodes(box.width, box.height).map((node) =>
       isMobile
         ? node
@@ -138,7 +135,11 @@ export default function MusicGraph({
     setNodes(next.nodes);
     setEdges(next.edges);
     if (!isMobile) {
-      setViewport({ x: 0, y: 0, zoom: 1 });
+      setViewport({
+        x: (view.width - box.width) / 2,
+        y: (view.height - box.height) / 2,
+        zoom: 1,
+      });
     }
 
     const { simulation, simNodes } = createForceSimulation({
@@ -156,12 +157,13 @@ export default function MusicGraph({
             syncSimNodeSize(simNodes, node.id, size);
 
             const nextPosition = { x: simNode.x, y: simNode.y };
+            const sim = simRef.current;
 
             return {
               ...node,
               position: isMobile
                 ? nextPosition
-                : clampNodePosition(nextPosition, size, boundsRef.current),
+                : clampNodePosition(nextPosition, size, sim?.box ?? box),
             };
           })
         );
@@ -188,8 +190,9 @@ export default function MusicGraph({
     const sim = simRef.current;
     if (!sim || !ready) return;
 
-    sim.box.width = bounds.width;
-    sim.box.height = bounds.height;
+    const world = getDesktopWorldSize(bounds);
+    sim.box.width = world.width;
+    sim.box.height = world.height;
     resizeSimulation(sim.simulation, sim.box);
 
     setNodes((current) =>
@@ -198,7 +201,7 @@ export default function MusicGraph({
         syncSimNodeSize(sim.simNodes, node.id, size);
         return {
           ...node,
-          position: clampNodePosition(node.position, size, bounds),
+          position: clampNodePosition(node.position, size, sim.box),
         };
       })
     );
@@ -207,7 +210,8 @@ export default function MusicGraph({
   function clampDrag(id, position) {
     if (isMobile) return position;
     const node = nodes.find((item) => item.id === id);
-    return clampNodePosition(position, getNodeSize(node), boundsRef.current);
+    const box = simRef.current?.box ?? boundsRef.current;
+    return clampNodePosition(position, getNodeSize(node), box);
   }
 
   function handleNodesChange(changes) {
@@ -253,6 +257,9 @@ export default function MusicGraph({
         onNodeDrag={handleNodeDrag}
         onNodeDragStop={handleNodeDragStop}
         onPaneClick={() => onSelect(null)}
+        onMove={(_, viewport) => {
+          frameRef.current?.classList.toggle("is-overview", viewport.zoom < 0.72);
+        }}
         defaultViewport={{ x: 0, y: 0, zoom: 1 }}
         minZoom={0.28}
         maxZoom={2.2}

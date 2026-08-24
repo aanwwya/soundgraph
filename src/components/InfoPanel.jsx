@@ -160,7 +160,7 @@ export default function InfoPanel({ record, onSelect, onClose }) {
         </section>
       ) : null}
 
-      {isGenre && artists.length > 0 ? (
+      {artists.length > 0 ? (
         <section className="info-panel__section">
           <h3>artists</h3>
           <LinkList records={artists} onSelect={onSelect} />
