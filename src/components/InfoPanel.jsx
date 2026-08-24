@@ -146,6 +146,16 @@ export default function InfoPanel({ record, onSelect, onClose }) {
 
       <Description paragraphs={paragraphs} />
 
+      {record.exploreTheScene ? (
+        <section className="info-panel__section">
+          <h3>explore the scene</h3>
+          <LinkList
+            records={getRecordsByIds(record.relatedGenres)}
+            onSelect={onSelect}
+          />
+        </section>
+      ) : null}
+
       {isArtist ? null : record.history?.length ? (
         <section className="info-panel__section">
           <h3>history</h3>
