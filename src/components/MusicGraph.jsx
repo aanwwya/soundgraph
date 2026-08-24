@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ReactFlow,
   useNodesState,
@@ -19,7 +19,6 @@ import {
   getDesktopWorldSize,
   getMobileWorldSize,
   pinSimNode,
-  resizeSimulation,
   syncSimNodeSize,
   unpinSimNode,
 } from "../utils/forceLayout.js";
@@ -47,16 +46,64 @@ export default function MusicGraph({
   hasPanel,
 }) {
   const frameRef = useRef(null);
+  const hScrollRef = useRef(null);
+  const vScrollRef = useRef(null);
   const [bounds, setBounds] = useState({ width: 0, height: 0 });
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState(createFlowEdges());
-  const { setViewport, fitView } = useReactFlow();
+  const { fitView, setViewport, getViewport } = useReactFlow();
   const selectedIdRef = useRef(selectedId);
   const simRef = useRef(null);
   const boundsRef = useRef(bounds);
   boundsRef.current = bounds;
+  const viewportRef = useRef({ x: 0, y: 0, zoom: 1 });
+  const syncingFromFlowRef = useRef(false);
+  const syncingFromBarRef = useRef(false);
+  const syncScrollbarsRef = useRef(() => {});
+  const getViewportRef = useRef(getViewport);
   const [isMobile, setIsMobile] = useState(readIsMobile);
   const ready = bounds.width >= 80 && bounds.height >= 80;
+
+  const syncScrollbars = useCallback((viewport) => {
+    const frame = frameRef.current;
+    const hScroll = hScrollRef.current;
+    const vScroll = vScrollRef.current;
+    const world = simRef.current?.box;
+    if (!frame || !hScroll || !vScroll || !world) return;
+
+    const viewW = frame.clientWidth;
+    const viewH = frame.clientHeight;
+    const contentW = Math.max(viewW, world.width * viewport.zoom);
+    const contentH = Math.max(viewH, world.height * viewport.zoom);
+    const needsX = contentW > viewW + 1;
+    const needsY = contentH > viewH + 1;
+
+    frame.style.setProperty("--graph-scroll-width", `${contentW}px`);
+    frame.style.setProperty("--graph-scroll-height", `${contentH}px`);
+    frame.classList.toggle("has-scroll-x", needsX);
+    frame.classList.toggle("has-scroll-y", needsY);
+    hScroll.classList.toggle("is-active", needsX);
+    vScroll.classList.toggle("is-active", needsY);
+
+    const nextLeft = Math.max(0, -viewport.x);
+    const nextTop = Math.max(0, -viewport.y);
+
+    syncingFromFlowRef.current = true;
+    if (Math.abs(hScroll.scrollLeft - nextLeft) > 0.5) {
+      hScroll.scrollLeft = nextLeft;
+    }
+    if (Math.abs(vScroll.scrollTop - nextTop) > 0.5) {
+      vScroll.scrollTop = nextTop;
+    }
+    requestAnimationFrame(() => {
+      syncingFromFlowRef.current = false;
+    });
+  }, []);
+
+  useEffect(() => {
+    getViewportRef.current = getViewport;
+    syncScrollbarsRef.current = syncScrollbars;
+  }, [getViewport, syncScrollbars]);
 
   useEffect(() => {
     selectedIdRef.current = selectedId;
@@ -76,6 +123,7 @@ export default function MusicGraph({
     const observer = new ResizeObserver(([entry]) => {
       const { width, height } = entry.contentRect;
       setBounds({ width, height });
+      syncScrollbarsRef.current(viewportRef.current);
     });
 
     observer.observe(frame);
@@ -134,13 +182,6 @@ export default function MusicGraph({
 
     setNodes(next.nodes);
     setEdges(next.edges);
-    if (!isMobile) {
-      setViewport({
-        x: (view.width - box.width) / 2,
-        y: (view.height - box.height) / 2,
-        zoom: 1,
-      });
-    }
 
     const { simulation, simNodes } = createForceSimulation({
       nodes: next.nodes,
@@ -169,43 +210,53 @@ export default function MusicGraph({
         );
       },
       onEnd: () => {
-        if (!isMobile) return;
         requestAnimationFrame(() => {
-          fitView({ padding: 0.22, duration: 420, maxZoom: 0.95 });
+          const duration = isMobile ? 420 : 0;
+          if (isMobile) {
+            fitView({ padding: 0.18, duration, maxZoom: 0.95 });
+          } else {
+            fitView({ padding: 0.12, duration, maxZoom: 1 });
+          }
+          window.setTimeout(() => {
+            const viewport = getViewportRef.current();
+            viewportRef.current = viewport;
+            syncScrollbarsRef.current(viewport);
+          }, duration + 32);
         });
       },
     });
 
     simRef.current = { simulation, simNodes, box, isMobile };
+    syncScrollbars(viewportRef.current);
 
     return () => {
       simulation.stop();
       simRef.current = null;
     };
-  }, [ready, resetNonce, isMobile, setNodes, setEdges, setViewport, fitView]);
+  }, [ready, resetNonce, isMobile, setNodes, setEdges, fitView, syncScrollbars]);
 
-  useEffect(() => {
-    if (isMobile) return;
+  function handleMove(_, viewport) {
+    viewportRef.current = viewport;
+    if (syncingFromBarRef.current) return;
+    syncScrollbars(viewport);
+  }
 
-    const sim = simRef.current;
-    if (!sim || !ready) return;
+  function handleBarScroll(axis) {
+    if (syncingFromFlowRef.current) return;
+    const hScroll = hScrollRef.current;
+    const vScroll = vScrollRef.current;
+    if (!hScroll || !vScroll) return;
 
-    const world = getDesktopWorldSize(bounds);
-    sim.box.width = world.width;
-    sim.box.height = world.height;
-    resizeSimulation(sim.simulation, sim.box);
-
-    setNodes((current) =>
-      current.map((node) => {
-        const size = getNodeSize(node);
-        syncSimNodeSize(sim.simNodes, node.id, size);
-        return {
-          ...node,
-          position: clampNodePosition(node.position, size, sim.box),
-        };
-      })
-    );
-  }, [bounds, ready, isMobile, setNodes]);
+    syncingFromBarRef.current = true;
+    setViewport({
+      x: axis === "x" ? -hScroll.scrollLeft : viewportRef.current.x,
+      y: axis === "y" ? -vScroll.scrollTop : viewportRef.current.y,
+      zoom: viewportRef.current.zoom,
+    });
+    requestAnimationFrame(() => {
+      syncingFromBarRef.current = false;
+    });
+  }
 
   function clampDrag(id, position) {
     if (isMobile) return position;
@@ -246,34 +297,51 @@ export default function MusicGraph({
       ref={frameRef}
       className={`graph-frame ${hasPanel ? "has-panel" : ""}`}
     >
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        nodeTypes={nodeTypes}
-        defaultEdgeOptions={defaultEdgeOptions}
-        onNodesChange={handleNodesChange}
-        onEdgesChange={onEdgesChange}
-        onNodeClick={(_, node) => onSelect(node.id)}
-        onNodeDrag={handleNodeDrag}
-        onNodeDragStop={handleNodeDragStop}
-        onPaneClick={() => onSelect(null)}
-        onMove={(_, viewport) => {
-          frameRef.current?.classList.toggle("is-overview", viewport.zoom < 0.72);
-        }}
-        defaultViewport={{ x: 0, y: 0, zoom: 1 }}
-        minZoom={0.28}
-        maxZoom={2.2}
-        panOnDrag
-        zoomOnScroll
-        zoomOnPinch
-        zoomOnDoubleClick={false}
-        panOnScroll={false}
-        preventScrolling
-        nodesConnectable={false}
-        elementsSelectable
-        proOptions={{ hideAttribution: true }}
-        className="music-graph"
-      />
+      <div className="graph-canvas">
+        <ReactFlow
+          nodes={nodes}
+          edges={edges}
+          nodeTypes={nodeTypes}
+          defaultEdgeOptions={defaultEdgeOptions}
+          onNodesChange={handleNodesChange}
+          onEdgesChange={onEdgesChange}
+          onNodeClick={(_, node) => onSelect(node.id)}
+          onNodeDrag={handleNodeDrag}
+          onNodeDragStop={handleNodeDragStop}
+          onPaneClick={() => onSelect(null)}
+          onMove={handleMove}
+          defaultViewport={{ x: 0, y: 0, zoom: 1 }}
+          minZoom={0.28}
+          maxZoom={2.2}
+          panOnDrag
+          zoomOnScroll
+          zoomOnPinch
+          zoomOnDoubleClick={false}
+          panOnScroll={false}
+          preventScrolling
+          nodesConnectable={false}
+          elementsSelectable
+          proOptions={{ hideAttribution: true }}
+          className="music-graph"
+        />
+      </div>
+      <div
+        ref={hScrollRef}
+        className="graph-scrollbar graph-scrollbar--x"
+        onScroll={() => handleBarScroll("x")}
+        aria-hidden="true"
+      >
+        <div className="graph-scrollbar__sizer" />
+      </div>
+      <div
+        ref={vScrollRef}
+        className="graph-scrollbar graph-scrollbar--y"
+        onScroll={() => handleBarScroll("y")}
+        aria-hidden="true"
+      >
+        <div className="graph-scrollbar__sizer" />
+      </div>
+      <div className="graph-scrollbar-corner" aria-hidden="true" />
     </div>
   );
 }

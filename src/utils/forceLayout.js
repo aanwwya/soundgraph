@@ -32,22 +32,6 @@ function layoutScale(width, height) {
   return Math.min(1, width / 1080, height / 760);
 }
 
-function forceWander(simNodes, intensity) {
-  let time = 0;
-
-  return () => {
-    time += 0.01;
-
-    for (let index = 0; index < simNodes.length; index += 1) {
-      const node = simNodes[index];
-      if (node.fx != null) continue;
-
-      node.vx += Math.sin(time + index * 1.7) * intensity;
-      node.vy += Math.cos(time * 0.85 + index * 2.3) * intensity;
-    }
-  };
-}
-
 function forceBounds(simNodes, box) {
   return () => {
     for (const node of simNodes) {
@@ -208,7 +192,7 @@ function createMobileForceSimulation({ nodes, edges, box, onTick, onEnd }) {
     )
     .force("x", forceX(world.width / 2).strength(0.01))
     .force("y", forceY(world.height / 2).strength(0.01))
-    .force("collide", forceLabelCollide(26, 4))
+    .force("collide", forceLabelCollide(28, 5))
     .alpha(0.9)
     .alphaDecay(0.028)
     .alphaMin(0.012)
@@ -218,9 +202,10 @@ function createMobileForceSimulation({ nodes, edges, box, onTick, onEnd }) {
     onTick(new Map(simNodes.map((node) => [node.id, node])));
   });
 
-  if (onEnd) {
-    simulation.on("end", onEnd);
-  }
+  simulation.on("end", () => {
+    simulation.stop();
+    onEnd?.();
+  });
 
   return { simulation, simNodes, box: world };
 }
@@ -265,16 +250,20 @@ export function createForceSimulation({
     )
     .force("x", forceX(box.width / 2).strength(0.01))
     .force("y", forceY(box.height / 2).strength(0.01))
-    .force("wander", forceWander(simNodes, 0.07 * Math.max(0.7, scale)))
     .force("bounds", forceBounds(simNodes, box))
-    .force("collide", forceLabelCollide(20, 8))
-    .alpha(0.24)
-    .alphaDecay(0)
-    .alphaTarget(0.1)
-    .velocityDecay(0.62);
+    .force("collide", forceLabelCollide(22, 8))
+    .alpha(0.9)
+    .alphaDecay(0.026)
+    .alphaMin(0.012)
+    .velocityDecay(0.48);
 
   simulation.on("tick", () => {
     onTick(new Map(simNodes.map((node) => [node.id, node])));
+  });
+
+  simulation.on("end", () => {
+    simulation.stop();
+    onEnd?.();
   });
 
   return { simulation, simNodes, box };

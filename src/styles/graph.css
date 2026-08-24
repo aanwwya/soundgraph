@@ -1,4 +1,5 @@
 .graph-frame .react-flow,
+.graph-canvas,
 .music-graph,
 .react-flow__renderer,
 .react-flow__pane {
@@ -94,11 +95,6 @@
 
 .graph-node.is-selected .graph-node__label {
   color: var(--accent);
-}
-
-.graph-frame.is-overview .graph-node--artist:not(.is-selected) .graph-node__label,
-.graph-frame.is-overview .graph-node--album:not(.is-selected) .graph-node__label {
-  opacity: 0;
 }
 
 .graph-node.is-dimmed {

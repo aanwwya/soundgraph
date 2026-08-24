@@ -3202,6 +3202,31 @@ export const records = [
     name: "east coast hip-hop",
     type: "genre",
     relatedGenres: ["hip-hop"],
+    description: [
+      "east coast hip hop grew out of the new york scene that gave birth to hip hop itself, with the bronx, queens, brooklyn and harlem developing their own sounds and communities. early producers built tracks around breakbeats, funk records, soul samples and sharp drum patterns, while mc's placed increasing emphasis on intricate rhyme schemes, storytelling and wordplay. as the culture expanded, new york became known for a style that often felt dense, lyrical and heavily rooted in sample based production.",
+      "during the 1980s, artists such as kool g rap, slick rick and big daddy kane helped establish the importance of technical lyricism and detailed storytelling. groups like public enemy brought a much more confrontational political edge, while the native tongues collective connected hip hop with jazz, funk and more playful forms of sampling. by the 1990s, the sound had developed into what is often associated with boom bap, built around hard drums, chopped samples and prominent basslines.",
+      "the golden era produced a huge range of sounds within the region. wu tang clan brought darker production and raw group chemistry, while nas and the notorious b.i.g. became major figures in the development of new york's lyrical tradition. producers such as dj premier, pete rock and large professor helped define the dense, sample driven sound that became closely associated with the east coast.",
+      "east coast hip hop has continued to evolve rather than remaining tied to its golden era identity. later artists incorporated soul, electronic music, jazz, experimental production and more melodic approaches, while independent scenes kept the emphasis on lyricism and unconventional production alive. its influence can be heard across hip hop, particularly in the importance placed on sampling, intricate writing and producer driven sound.",
+    ],
+    importantArtists: [
+      "kool-g-rap",
+      "slick-rick",
+      "big-daddy-kane",
+      "rakim",
+      "large-professor",
+      "mobb-deep",
+      "gang-starr",
+      "brand-nubian",
+      "black-moon",
+      "smif-n-wessun",
+      "lords-of-the-underground",
+      "jeru-the-damaja",
+      "cormega",
+      "onyx",
+      "busta-rhymes",
+    ],
+    playlistUrl:
+      "https://open.spotify.com/playlist/0m2NDpH879eJmopGAzCWwv?si=eg-btZgOTQCvw_w3QW78Xg",
   },
   {
     id: "west-coast-hip-hop",
@@ -3589,14 +3614,14 @@ export const records = [
     id: "jeru-the-damaja",
     name: "jeru the damaja",
     type: "artist",
-    genres: ["jazz-rap"],
+    genres: ["jazz-rap", "east-coast-hip-hop"],
     onGraph: false,
   },
   {
     id: "brand-nubian",
     name: "brand nubian",
     type: "artist",
-    genres: ["jazz-rap"],
+    genres: ["jazz-rap", "east-coast-hip-hop"],
     onGraph: false,
   },
   {
@@ -3866,16 +3891,116 @@ export const records = [
     onGraph: false,
   },
   {
+    id: "kool-g-rap",
+    name: "kool g rap",
+    type: "artist",
+    genres: ["east-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "slick-rick",
+    name: "slick rick",
+    type: "artist",
+    genres: ["east-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "big-daddy-kane",
+    name: "big daddy kane",
+    type: "artist",
+    genres: ["east-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "rakim",
+    name: "rakim",
+    type: "artist",
+    genres: ["east-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "large-professor",
+    name: "large professor",
+    type: "artist",
+    genres: ["east-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "mobb-deep",
+    name: "mobb deep",
+    type: "artist",
+    genres: ["east-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "black-moon",
+    name: "black moon",
+    type: "artist",
+    genres: ["east-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "smif-n-wessun",
+    name: "smif n wessun",
+    type: "artist",
+    genres: ["east-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "lords-of-the-underground",
+    name: "lords of the underground",
+    type: "artist",
+    genres: ["east-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "cormega",
+    name: "cormega",
+    type: "artist",
+    genres: ["east-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "onyx",
+    name: "onyx",
+    type: "artist",
+    genres: ["east-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
+    id: "busta-rhymes",
+    name: "busta rhymes",
+    type: "artist",
+    genres: ["east-coast-hip-hop"],
+    onGraph: false,
+  },
+  {
     id: "radiohead",
     name: "radiohead",
     type: "artist",
     genres: ["alternative"],
+    description: [
+      "radiohead emerged from oxfordshire, england, in the early 1990s and gradually became one of the most adventurous bands to come out of alternative rock. their earliest material leaned toward guitar driven rock, but over time they moved further into electronic music, experimental production, ambient textures and unconventional songwriting. each phase of their catalogue seems to question what the band had established before it.",
+      "their debut, pablo honey, introduced them to a wider audience through “creep,” but the record gives little indication of how dramatically their sound would change. the bends brought a more developed guitar based style, combining heavy alternative rock with layered melodies and a stronger sense of atmosphere.",
+      "with ok computer, radiohead began pushing beyond conventional rock. the album brought together distorted guitars, electronic elements, unusual structures and lyrics concerned with technology, isolation and modern life. its success allowed the band to experiment even further, leading to kid a, where synthesizers, programmed rhythms, ambient textures and fragmented vocals became central to the music.",
+      "later records such as amnesiac, in rainbows and a moon shaped pool continued moving between electronic music, art rock, orchestration and experimental composition. rather than abandoning their earlier sound completely, radiohead kept pulling pieces of it into new settings. that constant transformation became one of their defining qualities and helped make them one of the most influential acts in alternative music.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb?si=-tqz0mr4RFSv-kSyZdw7bw",
   },
   {
     id: "the-smiths",
     name: "the smiths",
     type: "artist",
     genres: ["alternative"],
+    description: [
+      "the smiths had a way of making ordinary feelings sound strangely dramatic. loneliness, boredom, wanting someone who doesn't want you back, feeling out of place in a room full of people, all of it became material for their songs. the music rarely sounds as miserable as the subjects themselves, though. johnny marr's bright guitar lines give many of the songs a warmth that constantly pushes against morrissey's darker writing.",
+      "the band came together in manchester in the early 1980s, with marr's guitar becoming the foundation of their sound. his playing was melodic without feeling overly polished, often using chiming chords and small guitar phrases that made the songs instantly recognizable. morrissey's voice and unusual lyrical perspective completed the contrast, turning everyday frustrations into something theatrical and memorable.",
+      "the queen is dead is probably the clearest example of what made them special. songs like “there is a light that never goes out” can sound almost romantic until you pay attention to the lyrics, while “bigmouth strikes again” turns embarrassment and self sabotage into something almost funny. there is often a strange sense of humor hiding underneath the melancholy.",
+      "what makes the smiths still feel relevant is that their music doesn't try to make alienation sound heroic. it can be awkward, petty, funny and genuinely sad at the same time. that combination of beautiful guitar work and uncomfortable honesty became a huge part of the alternative and indie rock vocabulary that followed.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/3yY2gUcIsjMr8hjo51PoJ8?si=zvl4RUp5So-D_UTOP7nn9Q",
   },
   {
     id: "the-replacements",
@@ -3888,6 +4013,14 @@ export const records = [
     name: "hüsker dü",
     type: "artist",
     genres: ["alternative"],
+    description: [
+      "hüsker dü emerged from minneapolis in the early 1980s, bringing together the speed and aggression of hardcore punk with melodies that were far more expansive than the genre usually allowed. their songs could be brutally fast one moment and unexpectedly vulnerable the next, creating a tension between noise, melody and emotion that became central to their sound.",
+      "their early records such as everything falls apart and new day rising captured the urgency of their hardcore roots, but the band gradually began writing songs with more layered structures and stronger melodic hooks. bob mould's distorted guitar work often carried an almost overwhelming intensity, while grant hart brought a different songwriting sensibility that gave the band's catalogue considerable variety.",
+      "flip your wig and candy apple grey showed how far they had moved beyond their hardcore beginnings. the guitars remained loud and rough around the edges, but the songwriting became increasingly focused on melody, relationships, frustration and uncertainty. this combination made their music accessible without stripping away the rawness that defined their earlier work.",
+      "their final album, warehouse: songs and stories, expanded the band's sound even further, using longer arrangements and more varied textures. although hüsker dü never became a conventional mainstream rock band, their influence on alternative rock was enormous. they demonstrated that punk could become more melodic, emotionally complicated and structurally ambitious without losing its intensity.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/16bN8mhtDFdegWbg0z3s10?si=ukMUQ6NxQqyIVxrBU43llw",
   },
   {
     id: "my-bloody-valentine",
@@ -3972,6 +4105,14 @@ export const records = [
     name: "herbie hancock",
     type: "artist",
     genres: ["jazz", "jazz-fusion"],
+    description: [
+      "herbie hancock became one of the most versatile musicians in modern jazz, moving comfortably between acoustic jazz, funk, electronic music and jazz fusion. his playing is often associated with experimentation, but what makes his work remarkable is how naturally he could absorb new sounds without losing his sense of melody and rhythm.",
+      "he first gained wider recognition in the 1960s as part of miles davis's second great quintet, where his piano became an important part of a group that was constantly challenging the conventions of jazz. albums such as empirean isles and maiden voyage also established him as a composer in his own right, with pieces built around unusual harmonies, spacious melodies and strong rhythmic ideas.",
+      "during the 1970s, hancock moved heavily toward electric instruments and funk. head hunters became one of the most influential records of this period, replacing the traditional jazz ensemble with synthesizers, electric keyboards, bass and heavily groove based arrangements. “chameleon” in particular showed how jazz could become deeply connected to funk and electronic sound without losing its improvisational character.",
+      "his later work continued to move between styles rather than settling into one identity. hancock experimented with electronic production, vocoders, synthesizers and hip hop, while also returning to acoustic jazz. this constant willingness to explore made him an important bridge between different generations of music, connecting the traditions of jazz with funk, electronic music and later forms of popular music.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/2ZvrvbQNrHKwjT7qfGFFUW?si=WiofxkNfRyGTzSlRf-GvVg",
   },
   {
     id: "wayne-shorter",
@@ -4006,6 +4147,14 @@ export const records = [
     name: "slayer",
     type: "artist",
     genres: ["metal"],
+    description: [
+      "slayer became one of the defining bands of thrash metal, taking the speed and aggression of heavy metal and pushing both into much harsher territory. emerging from california in the early 1980s, the band built its sound around rapid guitar riffs, relentless drumming, distorted tones and vocals that often felt more like another instrument than a conventional melody.",
+      "their early albums established a style that was faster and darker than much of the metal surrounding it. show no mercy introduced their raw approach, while hell awaits showed the band becoming more complex and intense. then came reign in blood in 1986, a record that condensed their sound into a remarkably short and relentless collection of songs. its speed, precision and sheer aggression became a major reference point for extreme metal that followed.",
+      "slayer's subject matter was deliberately confrontational. war, death, violence, religion and human brutality appeared repeatedly throughout their lyrics, often presented through disturbing imagery rather than straightforward commentary. this matched the music itself, which rarely gave the listener much space to settle before another riff or drum pattern arrived.",
+      "their influence reached far beyond thrash. death metal, black metal and other extreme styles borrowed from slayer's speed, guitar techniques and darker atmosphere. alongside metallica, megadeth and anthrax, they helped establish the foundations of thrash metal, but their particularly severe approach made them one of the most important links between traditional heavy metal and the extreme metal that emerged later.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/1IQ2e1buppatiN1bxUVkrk?si=ioXH2az3S6Gq-TSMkKEOxw",
   },
   {
     id: "metallica",
@@ -4102,6 +4251,14 @@ export const records = [
     name: "meshuggah",
     type: "artist",
     genres: ["progressive-metal"],
+    description: [
+      "meshuggah emerged from umeå, sweden, in the late 1980s and gradually built a sound that had very little resemblance to conventional metal. their music became known for extremely low tuned guitars, relentless rhythmic patterns and riffs that seem to move independently from the steady pulse of the drums. the result is heavy music that feels almost mathematical without losing its physical impact.",
+      "their early records still carried traces of thrash and traditional extreme metal, but albums such as destroy erase improve and chaosphere showed the band moving toward something much stranger. guitarist fredrik thordendal began experimenting with polyrhythmic patterns and unusual rhythmic subdivisions, while drummer tomas haake developed a style capable of maintaining a steady pulse against constantly shifting guitar patterns.",
+      "obzen became one of their defining records, particularly through songs like “bleed,” where the guitars and drums create a sense of controlled chaos. the riffs can sound incredibly complicated when analyzed, yet they often produce a hypnotic effect when heard as a whole. repetition becomes just as important as technicality, allowing tiny rhythmic changes to gradually reshape the entire groove.",
+      "meshuggah's influence became especially significant in the development of djent, a term later used for a wider movement of progressive metal built around low tuned guitars, syncopated riffs and complex rhythms. while meshuggah themselves don't fit neatly into that label, their approach became a blueprint for countless modern metal bands.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/3ggwAqZD3lyT2sbovlmfQY?si=McS79aElTWC2KQMFj03z9w",
   },
   {
     id: "dream-theater",
@@ -4121,7 +4278,7 @@ export const records = [
     id: "gang-starr",
     name: "gang starr",
     type: "artist",
-    genres: ["hip-hop", "boom-bap", "jazz-rap"],
+    genres: ["hip-hop", "boom-bap", "jazz-rap", "east-coast-hip-hop"],
     description: [
       "gang starr emerged from the new york hip-hop scene in the late 1980s, bringing together rapper guru and producer dj premier. their music became known for its stripped-back production, sharp drums and jazz-influenced samples, creating a sound that felt both gritty and controlled. guru's calm, measured delivery gave the group a distinctive presence, while dj premier's production became just as important to their identity.",
       "their early work established them as part of the underground rap movement, but step in the arena and daily operation showed how far they could take their sound. dj premier built tracks around chopped jazz samples, hard drum breaks and carefully placed scratches, leaving plenty of space for guru's verses. the production rarely felt overcrowded, which made the rhythm and lyricism stand out.",
@@ -4234,6 +4391,14 @@ export const records = [
     name: "marvin gaye",
     type: "artist",
     genres: ["soul"],
+    description: [
+      "marvin gaye became one of the defining voices of soul by constantly pushing the genre beyond straightforward love songs. his early recordings with motown were shaped around polished arrangements and romantic material, but his music gradually became more ambitious, bringing questions about relationships, society, politics and inner conflict into the same space.",
+      "his work in the late 1960s and early 1970s marked a major shift. what's going on transformed the possibilities of soul by combining layered vocals, jazz influenced arrangements and a loose, flowing rhythm section with subjects such as war, poverty, environmental destruction and social division. the album feels less like a collection of separate singles and more like one continuous conversation about the world around it.",
+      "gaye was equally inventive when dealing with intimacy. let's get it on focused heavily on desire and connection, but its production gave the music a warmth and sensuality that went beyond conventional romantic soul. later, i want you moved even further into atmosphere, using repetition, layered vocals and dense arrangements to create something almost dreamlike.",
+      "what makes gaye's catalogue especially interesting is the contrast between his voice and the subjects he explored. he could sound incredibly gentle while singing about difficult realities, or turn a simple romantic performance into something emotionally complicated. his willingness to make soul more personal, political and sonically adventurous helped influence generations of r&b and soul artists that followed.",
+    ],
+    artistUrl:
+      "https://open.spotify.com/artist/3koiLjNrgRTNbOwViDipeA?si=Tqf_CUojQzGBR3fQPx-RRA",
   },
   {
     id: "sex-pistols",

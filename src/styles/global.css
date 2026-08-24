@@ -67,6 +67,112 @@ a:hover {
   overflow: hidden;
 }
 
+.graph-canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.graph-scrollbar {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted) var(--paper);
+}
+
+.graph-scrollbar.is-active {
+  pointer-events: auto;
+  background: var(--paper);
+}
+
+.graph-scrollbar-corner {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  width: 10px;
+  height: 10px;
+  background: var(--paper);
+  pointer-events: none;
+}
+
+.graph-frame.has-scroll-x.has-scroll-y .graph-scrollbar-corner {
+  display: block;
+}
+
+.graph-scrollbar--y {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  overflow: hidden;
+}
+
+.graph-scrollbar--x {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10px;
+  overflow: hidden;
+}
+
+.graph-frame.has-scroll-y .graph-scrollbar--x.is-active {
+  right: 10px;
+}
+
+.graph-frame.has-scroll-x .graph-scrollbar--y.is-active {
+  bottom: 10px;
+}
+
+.graph-scrollbar--y.is-active {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.graph-scrollbar--x.is-active {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.graph-scrollbar__sizer {
+  pointer-events: none;
+}
+
+.graph-scrollbar--x .graph-scrollbar__sizer {
+  width: var(--graph-scroll-width, 100%);
+  height: 1px;
+}
+
+.graph-scrollbar--y .graph-scrollbar__sizer {
+  width: 1px;
+  height: var(--graph-scroll-height, 100%);
+}
+
+.graph-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.graph-scrollbar::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+
+.graph-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border: 2px solid var(--paper);
+  border-radius: 99px;
+}
+
+.graph-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+.graph-scrollbar::-webkit-scrollbar-corner {
+  background: var(--paper);
+}
+
 .graph-frame.has-panel {
   right: min(380px, 42vw);
 }
@@ -139,6 +245,27 @@ a:hover {
 }
 
 @media (max-width: 700px) {
+  .graph-scrollbar--y {
+    width: 12px;
+  }
+
+  .graph-scrollbar--x {
+    height: 12px;
+  }
+
+  .graph-frame.has-scroll-y .graph-scrollbar--x.is-active {
+    right: 12px;
+  }
+
+  .graph-frame.has-scroll-x .graph-scrollbar--y.is-active {
+    bottom: 12px;
+  }
+
+  .graph-scrollbar-corner {
+    width: 12px;
+    height: 12px;
+  }
+
   .site-mark {
     top: 16px;
     left: 18px;
