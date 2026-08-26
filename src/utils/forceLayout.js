@@ -131,6 +131,19 @@ function forceLabelCollide(padding, passes = 3) {
   return force;
 }
 
+function bindSimulationTicks(simulation, simNodes, onTick, onEnd) {
+  const tickMap = new Map(simNodes.map((node) => [node.id, node]));
+
+  simulation.on("tick", () => {
+    onTick(tickMap);
+  });
+
+  simulation.on("end", () => {
+    simulation.stop();
+    onEnd?.();
+  });
+}
+
 export function getMobileWorldSize() {
   const nodeCount = getRecords().filter(isOnGraph).length;
   const area = Math.max(80, nodeCount) * 260 * 90;
@@ -198,14 +211,7 @@ function createMobileForceSimulation({ nodes, edges, box, onTick, onEnd }) {
     .alphaMin(0.012)
     .velocityDecay(0.4);
 
-  simulation.on("tick", () => {
-    onTick(new Map(simNodes.map((node) => [node.id, node])));
-  });
-
-  simulation.on("end", () => {
-    simulation.stop();
-    onEnd?.();
-  });
+  bindSimulationTicks(simulation, simNodes, onTick, onEnd);
 
   return { simulation, simNodes, box: world };
 }
@@ -257,14 +263,7 @@ export function createForceSimulation({
     .alphaMin(0.012)
     .velocityDecay(0.48);
 
-  simulation.on("tick", () => {
-    onTick(new Map(simNodes.map((node) => [node.id, node])));
-  });
-
-  simulation.on("end", () => {
-    simulation.stop();
-    onEnd?.();
-  });
+  bindSimulationTicks(simulation, simNodes, onTick, onEnd);
 
   return { simulation, simNodes, box };
 }

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Handle, Position } from "@xyflow/react";
 
 const handleStyle = {
@@ -6,7 +7,7 @@ const handleStyle = {
   transform: "translate(-50%, -50%)",
 };
 
-export default function GraphNode({ data, selected }) {
+function GraphNode({ data, selected }) {
   const classes = [
     "graph-node",
     `graph-node--${data.nodeType}`,
@@ -34,3 +35,12 @@ export default function GraphNode({ data, selected }) {
     </div>
   );
 }
+
+export default memo(GraphNode, (prev, next) => {
+  return (
+    prev.selected === next.selected &&
+    prev.data.label === next.data.label &&
+    prev.data.dimmed === next.data.dimmed &&
+    prev.data.nodeType === next.data.nodeType
+  );
+});
